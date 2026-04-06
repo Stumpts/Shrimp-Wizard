@@ -8,11 +8,11 @@ windowHeight = 720
 window = pygame.display.set_mode((windowWidth, windowHeight))
 pygame.display.set_caption("Shrimp Wizard")
 
-player = Player(0, 0, 10, 10, 10)
+player = Player(0, 0, 10, 10, 0.1)
 
 running = True
 while running:
-    pygame.time.delay(100)
+    #pygame.time.delay(100)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
