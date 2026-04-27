@@ -1,4 +1,6 @@
 import pygame
+from Bubble import Bubble
+import math
 
 class Player:
     def __init__(self, x, y, width, height, speed):
@@ -42,3 +44,16 @@ class Player:
 
     def draw(self, window, camera_x, camera_y):
         window.blit(self.image, (self.x - camera_x, self.y - camera_y))
+
+
+    def getPosition(self):
+        return self.x, self.y
+    
+    def shoot(self, targetX, targetY):
+        dx = targetX - self.x
+        dy = targetY - self.y
+        dist = math.hypot(dx, dy)
+        dx /= dist
+        dy /= dist
+
+        return (Bubble(self.x + 50, self.y + 30, dx, dy))

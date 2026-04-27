@@ -110,7 +110,7 @@ class WhirlpoolManager:
         self._cooldown_timer = 0.0
 
     def handle_event(self, event: pygame.event.Event, camera_x: float = 0, camera_y: float = 0):
-        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 3:
             if self._cooldown_timer <= 0 and len(self.whirlpools) < Whirlpool.MAX_WHIRLPOOLS:
                 mx, my = event.pos
                 wx = mx + camera_x
