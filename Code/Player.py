@@ -8,7 +8,7 @@ class Player:
         self.height = height
         self.speed = speed
 
-        self.image = pygame.image.load("assets/shrimp.png")
+        self.image = pygame.image.load("assets/ShrimpWizard.png")
         self.image = pygame.transform.scale(self.image, (width, height))
 
         self.vx = 0

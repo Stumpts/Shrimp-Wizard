@@ -13,10 +13,14 @@ clock = pygame.time.Clock()
 
 player = Player(0, 0, 100, 50, 200)  # x, y, width, height, speed
 whirlpool_manager = WhirlpoolManager()
+score = 0
+scoreFont = pygame.font.Font(None, 36)
 
 running = True
 while running:
     dt = clock.tick(60) / 1000.0  # Delta time in seconds
+    score += dt
+    scoreText = scoreFont.render(f"Score: {score:.0f}", True, (255, 255, 255))
 
 
     cameraX = player.x - WINDOW_WIDTH // 2
@@ -34,6 +38,7 @@ while running:
 
     # draw
     window.fill((46, 110, 158))  # Background color
+    window.blit(scoreText, (600, 20))
     whirlpool_manager.draw(window, cameraX, cameraY)
     player.draw(window, cameraX, cameraY)
     pygame.display.update()
