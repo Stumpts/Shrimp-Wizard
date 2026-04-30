@@ -1,9 +1,0 @@
-{
-    "python-envs.defaultEnvManager": "ms-python.python:system",
-    "doki.background.path": "",
-    "doki.statusbar.name": "shibal",
-    "doki.wallpaper.path": "",
-    "doki.wallpaper.enabled": false,
-    "doki.background.enabled": false,
-    "doki.sticker.css": ""
-}
