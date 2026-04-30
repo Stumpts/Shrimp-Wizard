@@ -1,6 +1,9 @@
 import pygame
 from Bubble import Bubble
 import math
+from pathlib import Path
+
+_ASSETS_DIR = Path(__file__).resolve().parent.parent / "Assets"
 
 class Player:
     def __init__(self, x, y, width, height, speed):
@@ -10,7 +13,7 @@ class Player:
         self.height = height
         self.speed = speed
 
-        self.image = pygame.image.load("assets/ShrimpWizard.png")
+        self.image = pygame.image.load(_ASSETS_DIR / "ShrimpWizard.png")
         self.image = pygame.transform.scale(self.image, (width, height))
 
         self.vx = 0
