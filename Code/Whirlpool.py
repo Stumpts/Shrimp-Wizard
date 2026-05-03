@@ -3,8 +3,8 @@ import math
 
 class Whirlpool:
 
-    RADIUS = 180
-    FORCE = 520
+    RADIUS = 250
+    FORCE = 300
     MIN_DIST = 30
     DURATION = 3.0
     FADE_START = 0.6
@@ -17,7 +17,7 @@ class Whirlpool:
     ARC_DEGREES = 90
     COLOR_OUTER = (100, 210, 255)
     COLOR_INNER = (200, 240, 255)
-    PARTICLE_COUNT = 8
+    PARTICLE_COUNT = 2
 
     def __init__(self, x: float, y: float):
         self.x = x
@@ -80,10 +80,10 @@ class Whirlpool:
         life_frac = self.age / self.DURATION
         alpha = 255 if life_frac < self.FADE_START else int(255 * (1.0 - (life_frac - self.FADE_START) / (1.0 - self.FADE_START)))
 
-        size = (self.OUTER_RADIUS * 2 + 10, self.OUTER_RADIUS * 2 + 10)
+        size = (self.OUTER_RADIUS * 2, self.OUTER_RADIUS * 2)
         surf = pygame.Surface(size, pygame.SRCALPHA)
-        cx = size[0] // 2
-        cy = size[1] // 2
+        cx = self.OUTER_RADIUS
+        cy = self.OUTER_RADIUS
 
         for arm in range(self.NUM_ARMS):
             base_angle = self._spin + arm * (2 * math.pi / self.NUM_ARMS)
@@ -102,7 +102,7 @@ class Whirlpool:
             pygame.draw.circle(surf, (*self.COLOR_OUTER, alpha), (px, py), p["size"])
 
         pygame.draw.circle(surf, (*self.COLOR_INNER, alpha), (cx, cy), 6)
-        surface.blit(surf, (sx - size[0] // 2, sy - size[1] // 2))
+        surface.blit(surf, (sx - self.OUTER_RADIUS, sy - self.OUTER_RADIUS))
 
 class WhirlpoolManager:
     def __init__(self):

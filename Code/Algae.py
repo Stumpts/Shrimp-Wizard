@@ -10,8 +10,8 @@ class Algae:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.width = 30
-        self.height = 30
+        self.width = 70
+        self.height = 70
         self.pointValue = 50
         self.alive = True
 
