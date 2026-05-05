@@ -10,9 +10,6 @@ class Bubble:
         self.dy = dy
         self.speed = 500
 
-        self.vx = 0
-        self.vy = 0
-
         self.radius = 5
         self.alive = True
 

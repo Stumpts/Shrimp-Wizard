@@ -1,6 +1,5 @@
 import pygame
 from GameScene import game_loop
-from EndScene import end_loop
 from pathlib import Path
 
 

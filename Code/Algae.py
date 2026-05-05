@@ -18,8 +18,6 @@ class Algae:
         self.image = pygame.image.load(_ASSETS_DIR / "algae.png")
         self.image = pygame.transform.scale(self.image, (30, 30))
 
-        self.vx = 0
-        self.vy = 0
 
 
 
