@@ -1,0 +1,20 @@
+Requirements
+• Python 3.9 or later
+• Pygame library
+
+Step 1: Clone the Repository
+Open a terminal and run the following command to download the project:
+ 	git clone https://github.com/Stumpts/Shrimp-Wizard.git
+cd Shrimp-Wizard
+Step 2: Install Dependencies
+Install the required Pygame library using pip:	
+pip install pygame
+
+If you are using Python 3 and pip is mapped to Python 2 on your system, use:
+pip3 install pygame
+Step 3: Run the Game
+Navigate to the Code directory and run the main script:
+cd Code
+python main.py
+On macOS or Linux, use python3 if python refers to Python 2:
+python3 main.py
